@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 스터디 페이지</title>
+    <link rel="stylesheet" href="css3.css">
+</head>
+<body>
+    <header>
+        <h1>CSS 스터디 페이지</h1>
+    </header>
+    
+    <main>
+        <section id="css-intro">
+            <div class="section-header">
+                <h2>CSS란?</h2>
+                <p class="image-note">(해당페이지는 이미지 없이, CSS만으로 구현되었습니다)</p>
+            </div>
+            <div class="section-content">
+                <div class="text-content">
+                    <p>CSS(Cascading Style Sheets)는 웹 페이지의 시각적인 표현을 담당하는 스타일 시트 언어입니다. 
+                    HTML이 웹 페이지의 구조와 내용을 정의한다면, CSS는 그 내용의 디자인과 레이아웃을 결정합니다.</p>
+                </div>
+                <div class="image-container">
+                    <div class="css-illustration">
+                        <div class="html-box">HTML</div>
+                        <div class="css-box">CSS</div>
+                        <div class="arrow">→</div>
+                        <div class="styled-page">
+                            <div class="page-header"></div>
+                            <div class="page-content">
+                                <div class="content-line"></div>
+                                <div class="content-line"></div>
+                                <div class="content-line"></div>
+                            </div>
+                            <div class="page-footer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="features">
+                <h3>CSS의 주요 기능:</h3>
+                <ul>
+                    <li>글자 스타일링 (글꼴, 크기, 색상, 간격 등)</li>
+                    <li>레이아웃 제어 (위치, 크기, 여백 등)</li>
+                    <li>시각적 효과 (그림자, 투명도, 배경 등)</li>
+                    <li>반응형 디자인 구현 (다양한 화면 크기에 적응)</li>
+                    <li>애니메이션 효과</li>
+                </ul>
+            </div>
+            
+            <div class="code-example">
+                <p>CSS는 "선택자(selector)"를 사용해 HTML 요소를 선택하고, "속성(property)"과 "값(value)"으로 이루어진 선언(declaration)을 통해 스타일을 적용합니다.</p>
+                <pre><code>selector {
+  property: value;
+}</code></pre>
+            </div>
+        </section>
+        
+        <section id="css3-vs-css">
+            <h2>CSS3와 기존 CSS의 차이</h2>
+            <p>CSS3는 CSS의 세 번째 주요 버전으로, 이전 버전들에 비해 크게 향상된 기능을 제공합니다.</p>
+            
+            <div class="differences">
+                <h3>주요 차이점:</h3>
+                <ol>
+                    <li>
+                        <h4>모듈식 구조:</h4>
+                        <p>CSS3는 여러 독립적인 모듈로 구성되어 있어 브라우저가 점진적으로 기능을 지원할 수 있게 되었습니다.</p>
+                    </li>
+                    <li>
+                        <h4>새로운 시각적 효과:</h4>
+                        <ul>
+                            <li>그림자 효과 (<code>box-shadow</code>, <code>text-shadow</code>)</li>
+                            <li>둥근 모서리 (<code>border-radius</code>)</li>
+                            <li>그라데이션 (<code>linear-gradient</code>, <code>radial-gradient</code>)</li>
+                            <li>투명도 (<code>opacity</code>, <code>rgba()</code>)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>향상된 레이아웃 기능:</h4>
+                        <ul>
+                            <li>플렉스박스 (간편한 배치, 정렬)</li>
+                            <li>그리드 레이아웃 (2차원 배치, 정렬)</li>
+                            <li>다중 열 레이아웃 (여러 열 자동 배치, 정렬)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>애니메이션과 변환:</h4>
+                        <ul>
+                            <li>애니메이션 (<code>@keyframes</code>, <code>animation</code>)</li>
+                            <li>변환 효과 (<code>transform</code>, <code>transition</code>)</li>
+                            <li>3D 효과</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <h4>미디어 쿼리:</h4>
+                        <ul>
+                            <li>화면 크기, 해상도에 따른 반응형 (자동 맞춤형) 디자인 구현</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>기존 CSS가 기본적인 스타일링을 위한 것이라면, CSS3는 복잡한 레이아웃과 애니메이션 효과를 간편하게 구현할 수 있게 해주었습니다.</p>
+            </div>
+        </section>
+        
+        <section id="box-model">
+            <h2>CSS 박스 모델</h2>
+            <p>CSS 박스 모델은 요소의 크기와 공간을 제한하는 개념입니다. 모든 HTML 요소는 사실 박스안에 있으며, 다음 네 가지 영역으로 구성됩니다:</p>
+            
+            <ol>
+                <li><strong>콘텐츠 영역(Content)</strong>: 텍스트, 이미지 등 실제 내용의 영역</li>
+                <li><strong>패딩(Padding)</strong>: 콘텐츠와 테두리 사이의 공간</li>
+                <li><strong>테두리(Border)</strong>: 패딩을 둘러싸는 영역</li>
+                <li><strong>마진(Margin)</strong>: 테두리 바깥쪽의 공간, 다른 요소와의 거리</li>
+            </ol>
+
+            
+            <div class="box-model-illustration">
+                <div class="margin-box">
+                    <div class="margin-label">margin</div>
+                    <div class="border-box">
+                        <div class="border-label">border</div>
+                        <div class="padding-box">
+                            <div class="padding-label">padding</div>
+                            <div class="content-box">
+                                <div class="content-label">content</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                
+            <h3>Margin, Border 예시 Code</h3>
+            <pre><code>.styled-page {
+                width: 120px;
+                height: 150px;
+                border: 2px solid #ddd;
+                border-radius: 5px;
+                background-color: white;
+                padding: 10px;
+                margin: 10px;
+                box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+              }</code></pre>
+            </div>
+        </section>
+        
+        <section id="alignment">
+            <h2>정렬</h2>
+            <p>CSS에서 요소를 정렬하는 방법은 여러 가지가 있습니다.</p>
+            
+            <div class="text-alignment-examples">
+                <div class="text-align-left">
+                    <p>왼쪽 정렬 글자</p>
+                    <code>.text { text-align: left; }</code>
+                </div>
+                <div class="text-align-center">
+                    <p>가운데 정렬 글자</p>
+                    <code>.text { text-align: center; }</code>
+                </div>
+                <div class="text-align-right">
+                    <p>오른쪽 정렬 글자</p>
+                    <code>.text { text-align: right; }</code>
+                </div>
+            </div>
+            
+            <div class="alignment-methods">
+                <h3>텍스트 정렬 예시 Code</h3>
+                <pre><code>.text {
+  text-align: left | right | center | justify;
+}</code></pre>
+                
+                <h3>인라인 요소 수직 정렬 예시 Code</h3>
+                <pre><code>.inline {
+  vertical-align: baseline | top | middle | bottom;
+}</code></pre>
+                
+                <h3>블록 요소 수평 정렬 예시 Code</h3>
+                <pre><code>.block {
+  margin: 0 auto; 
+}</code></pre>
+                 
+                <h3>Flexbox를 이용한 정렬 예시 Code</h3>
+                <p>CSS3에서 추가된 기능인 Flexbox는 1차원 레이아웃 시스템으로, 보기 쉬운 코드 형태로 전체를 정렬하게 도와줍니다.</p>
+                <pre><code>.container {
+  display: flex;
+  
+  /* 가로를 축으로 잡고 정렬 */
+  justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly;
+  
+  /* 세소를 축으로 잡고 정렬 */
+  align-items: flex-start | flex-end | center | baseline | stretch;
+  
+  /* 여러 방향 기준 정렬 */
+  align-content: flex-start | flex-end | center | space-between | space-around | stretch;
+}</code></pre>
+            </div>
+        </section>
+        
+        <section id="effects">
+            <h2>페이지 효과 적용</h2>
+            <p>CSS3는 애니메이션과 시각적 효과도 제공합니다.
+                밑 예시들은, 실제 CSS3를 활용하여 구현한 애니메이션입니다.</p>
+
+
+            <div class="effects-examples">
+                <div class="effect-item">
+                    <h3>전환(Transition) - HOVER</h3>
+                    <p>요소의 상태 변화를 부드럽게 만들어줍니다. 아래 예시는 Hover로써, 마우스를 가져다 대면 모습이 변화합니다.</p>
+                    <button class="hover-button">직접 마우스를 올려보세요</button>
+                </div>
+                
+                <div class="effect-item">
+                    <h3>애니메이션(Animation)</h3>
+                    <p>아래 예시는 다양한 페이지에서 만나실 수 있는 로딩 스피너의 예시입니다.</p>
+                    <div class="spinner"></div>
+                </div>
+                
+                <div class="effect-item">
+                    <h3>그림자 효과</h3>
+                    <p>이와 같이 요소나 텍스트에 그림자도 추가할 수 있습니다.</p>
+                    <div class="shadow-example">
+                        <div class="box-shadow">Box</div>
+                        <div class="text-shadow">Text</div>
+                    </div>
+                </div>
+            </div>
+
+            <h3>전환(Hover) 예시 Code</h3>
+            <pre><code>.hover-button {
+                padding: 12px 24px;
+                background-color: #4a6da7;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+              }
+            
+            .hover-button:hover {
+                transform: scale(1.1);
+                background-color: #3a5a8f;
+                box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+              }</code></pre>
+
+            <h3>애니메이션 예시 Code</h3>
+            <pre><code>.spinner {
+                width: 50px;
+                height: 50px;
+                border: 5px solid #f3f3f3;
+                border-top: 5px solid #4a6da7;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+                margin: 20px auto;
+         }</code></pre>
+            <h3>그림자 효과 예시 Code</h3>
+            <pre><code>.box-shadow {
+                width: 150px;
+                height: 60px;
+                background-color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+                border-radius: 5px;
+            }</code></pre>
+        </section>
+    </main>
+    
+    <footer>
+        <p> 4조 정적 페이지 : CSS3</p>
+    </footer>
+</body>
+</html>
